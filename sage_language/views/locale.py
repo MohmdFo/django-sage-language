@@ -70,7 +70,7 @@ class SetLanguageView(View):
             translation.activate(language)
             next_page = MultilingualService.get_language_prefix(next_page, language)
             response = HttpResponseRedirect(next_page)
-            response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
+            response.set_cookie(settings.SAGE_LANGUAGE_COOKIE_NAME, language)
             return response
         else:
             return HttpResponseRedirect(next_page)
